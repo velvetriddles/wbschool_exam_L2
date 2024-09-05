@@ -1,5 +1,11 @@
 package main
 
+import (
+	"bufio"
+	"os"
+	"dev03/mysort"
+)
+
 /*
 === Утилита sort ===
 
@@ -26,5 +32,11 @@ package main
 */
 
 func main() {
-
+	scanner := bufio.NewScanner(os.Stdin)
+	var lines []string
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	par := mysort.ParseArgs()
+	mysort.Run(par, lines)
 }

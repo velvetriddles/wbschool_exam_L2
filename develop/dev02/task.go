@@ -1,5 +1,10 @@
 package main
 
+import (
+	"dev02/unpack"
+	"fmt"
+)
+
 /*
 === Задача на распаковку ===
 
@@ -19,5 +24,7 @@ package main
 */
 
 func main() {
-
+	str, err := unpack.GetStr("a4bc2d5e")
+	_ = err
+	fmt.Println(str)
 }

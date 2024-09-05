@@ -1,5 +1,10 @@
 package main
 
+import (
+	"dev04/find"
+	"fmt"
+)
+
 /*
 === Поиск анаграмм по словарю ===
 
@@ -20,5 +25,9 @@ package main
 */
 
 func main() {
-
+	arr := []string{
+		"пятак", "пятка", "тяпка", "aaaaaaa", "слиток", "столик", "листок",
+	}
+	mp := find.GetMap(arr)
+	fmt.Println(mp)
 }

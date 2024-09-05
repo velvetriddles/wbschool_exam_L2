@@ -1,5 +1,11 @@
 package main
 
+import (
+	"dev01/ntp"
+	"fmt"
+	"os"
+)
+
 /*
 === Базовая задача ===
 
@@ -13,5 +19,12 @@ package main
 */
 
 func main() {
+	curTime, err := ntp.GetTime("")
 
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return
+	}
+
+	fmt.Println(curTime)
 }
